@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="text-center">CREAR TAREA</h5>
+        <form [formGroup]="formulario" (ngSubmit)="crarTarea()">
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text" >
+                    <i class="fa-solid fa-list-check" 
+                    [class.icono-verde]="this.formulario.get('nombreTarea')?.valid"
+                    [class.icono-rojo]="this.formulario.get('nombreTarea')?.invalid && this.formulario.get('nombreTarea')?.touched"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Nombre tarea" formControlName="nombreTarea" maxlength="20" minlength="4">
+            </div>
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text" >
+                    <i class="fa-solid fa-file-word" 
+                    [class.icono-verde]="this.formulario.get('descripcionTarea')?.valid"
+                    [class.icono-rojo]="this.formulario.get('descripcionTarea')?.invalid && this.formulario.get('descripcionTarea')?.touched"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Descripción tarea" formControlName="descripcionTarea" maxlength="200" minlength="4">
+            </div>
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text" >
+                    <i class="fa-solid fa-calendar-days" 
+                    [class.icono-verde]="this.formulario.get('fecha')?.valid"
+                    [class.icono-rojo]="this.formulario.get('fecha')?.invalid && this.formulario.get('fechaTarea')?.touched"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="DD/MM/YY" formControlName="fecha" maxlength="8" minlength="8">
+            </div>
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text" >
+                    <i class="fa-solid fa-bell"></i>
+                </span>
+                <div class="form-check form-switch ms-3 mt-1">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" formControlName="recordatorio">
+                  </div>
+            </div>
+            <div class="div d-grid gap-2">
+                <button class="btn btn-primary btn-lg" type="submit" [disabled]="formulario.invalid">
+                    <i class="fa-solid fa-database me-2"></i>
+                    GUARDAR TAREA</button>
+            </div>
+        </form>
+    </div>
+</div>
