@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CrearTareaComponent } from './components/crear-tarea/crear-tarea.component';
 import { ListarTareaComponent } from './components/listar-tarea/listar-tarea.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

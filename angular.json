@@ -122,6 +122,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "agenda:build:production",
+            "firebaseProject": "agenda-34772",
+            "firebaseHostingSite": "agenda-34772"
+          }
         }
       }
     }

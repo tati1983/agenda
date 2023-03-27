@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "agenda-34772": {
+      "hosting": {
+        "agenda": [
+          "agenda-34772"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "agenda-34772"
+  }
+}
