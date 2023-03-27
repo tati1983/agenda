@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { Tarea } from '../models/tarea';
 
 @Injectable({
@@ -11,5 +12,9 @@ export class TareaService {
 
   guardarTarea(tarea : Tarea) : Promise <any> {
     return this.firestore.collection('tareas').add(tarea);
+  }
+
+  listarTarea() : Observable <any> {
+    return this.firestore.collection('tareas').snapshotChanges();
   }
 }

@@ -1,6 +1,11 @@
 <div class="card m-5">
     <div class="card-body">
-        <h5 class="text-center">CREAR TAREA</h5>
+        <h5 class="text-center">CREAR TAREA
+            <div class="spinner-border float-end me-2 mb-2" role="status"
+            *ngIf="loading">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </h5>
         <form [formGroup]="formulario" (ngSubmit)="crarTarea()">
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text" >
