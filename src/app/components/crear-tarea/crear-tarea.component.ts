@@ -27,11 +27,13 @@ export class CrearTareaComponent {
       fecha: this.formulario.value.fecha,
       recordatorio: this.formulario.value.recordatorio
     }
-    console.log(TAREA)
-    // this._tareaService.guardarTare(TAREA).then(() => {
-    //   console.log('Tarea guardada')
-    // }, err => {})
-
+    // console.log(TAREA)
+    this._tareaService.guardarTarea(TAREA).then(() => {
+      console.log('Tarea guardada');
+      this.formulario.reset();
+    }, err => {
+      console.log(err);
+      this.formulario.reset();
+    })
   }
-
 }
