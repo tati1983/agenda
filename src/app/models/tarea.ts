@@ -6,7 +6,7 @@ export class Tarea{
     fecha : Date;
     recordatorio? : boolean;
 
-    constructor(nombreTarea : string, descripcionTarea : string, fecha : Date) {
+    constructor(nombreTarea : string, descripcionTarea : string, fecha : Date, fechaCreacion : string) {
         this.nombreTarea = nombreTarea;
         this.descripcionTarea = descripcionTarea;
         this.fecha = fecha;
